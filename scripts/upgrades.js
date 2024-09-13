@@ -5,8 +5,9 @@ async function main() {
    const gas = await ethers.provider.getGasPrice();
    const cngn = await ethers.getContractFactory("cngn");
  
-    console.log("Deploying cngn upgrafes contract...");
-    const upgradeableCngn = await upgrades.upgradeProxy("", cngn,{
+    console.log("Deploying cngn upgrades contract...");
+    const upgradeableCngn = await upgrades.upgradeProxy("replace with proxy contract address", cngn,{
+
        kind: "transparent"
     });
     await upgradeableCngn.deployed();
